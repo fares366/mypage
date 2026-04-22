@@ -1,0 +1,301 @@
+
+/* Shared theme is now in src/index.css. This page file keeps layout and page-level overrides. */
+
+/* Theme Variables */
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --bg: #080B12;
+  --text: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B3B8;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-hover: rgba(255, 255, 255, 0.2);
+  --cyan: #00D9C0;
+  --cyan-dim: rgba(0, 217, 192, 0.12);
+  --blue: #3B82F6;
+  --blue-dim: rgba(59, 130, 246, 0.08);
+  --bg-card: rgba(11, 16, 28, 0.82);
+  --bg-surface: rgba(12, 17, 31, 0.92);
+  --bg-dark: rgba(8, 11, 18, 0.98);
+  --shadow-dark: 0 24px 80px rgba(0, 0, 0, 0.25);
+  --glow-color: rgba(0, 217, 192, 0.15);
+  --glow-color-2: rgba(0, 217, 192, 0.05);
+  --radius-pill: 50px;
+  --gradient-start: #3B82F6;
+  --gradient-end: #00D9C0;
+}
+
+[data-theme="light"] {
+  --bg: #FFFFFF;
+  --text: #050505;
+  --text-primary: #050505;
+  --text-secondary: #6B7280;
+  --text-muted: #475569;
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-hover: rgba(0, 0, 0, 0.15);
+  --cyan: #059669;
+  --cyan-dim: rgba(5, 150, 105, 0.08);
+  --blue: #059669;
+  --blue-dim: rgba(5, 150, 105, 0.12);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-surface: rgba(247, 250, 252, 0.95);
+  --bg-dark: rgba(248, 250, 252, 0.98);
+  --shadow-dark: 0 24px 80px rgba(15, 23, 42, 0.12);
+  --gradient-start: #059669;
+  --gradient-end: #10B981;
+  --glow-color: rgba(5, 150, 105, 0.1);
+  --glow-color-2: rgba(5, 150, 105, 0.03);
+}
+  
+
+
+html {
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+body, html {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-family: var(--font-sans);
+    overflow-wrap: break-word;
+}
+@media (max-width: 920px) {
+  p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-family: var(--font-sans);
+  }
+}
+
+main {
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+/* Default heading styles */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+h1 { font-size: 3.5rem; line-height: 1.1; }
+h2 { font-size: 2.5rem; line-height: 1.2; }
+h3 { font-size: 1.8rem; line-height: 1.3; }
+h4 { font-size: 1.4rem; line-height: 1.4; }
+
+@media (max-width: 920px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.3rem; }
+}
+
+@media (max-width: 658px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.2rem; }
+}
+
+p, a, span {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Background Glow --- */
+
+.bg-glow {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    width: min(900px, 100vw);
+    max-width: 100vw;
+    height: min(700px, 80vh);
+    background: radial-gradient(ellipse, var(--glow-color) 0%, var(--glow-color-2) 40%, transparent 70%);
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Global Button Base Styles */
+.btn {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: -0.01em;
+}
+
+.btn:active {
+    transform: scale(0.96);
+    filter: brightness(0.9);
+}
+
+.btnCyanPill {
+    background: var(--cyan);
+    color: #080B12;
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btnCyanPill:hover {
+    background: #00F0D4;
+    box-shadow: 0 0 20px rgba(0, 217, 192, 0.3);
+}
+
+.btnOutlinePill {
+    background: transparent;
+    margin-right: 10px;
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+}
+
+
+.btnOutlinePill:hover {
+    background: var(--glass-bg);
+    border-color: var(--glass-border-hover);
+}
+
+/* Global Hero Section Layout */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    min-height: 100vh;
+    gap: 80px;
+}
+
+@media (max-width: 920px) {
+    .hero {
+        padding: 0 40px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 20px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 658px) {
+    .hero {
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 20px;
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+}
+:global([data-theme="light"]) .btnOutlinePill {
+    border-color: rgba(5, 150, 105, 0.35);
+    color: #059669;
+}
+
+:global([data-theme="light"]) .btnOutlinePill:hover {
+    background: rgba(5, 150, 105, 0.08);
+    border-color: #059669;
+    color: #047857;
+}
+
+/* Global Utilities */
+.barsImg {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+.barsImg:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
+.navActions {
+    display: flex;
+    gap: 8px;
+}
+
+
+
+/* ==============================================
+   RESPONSIVE DESIGN - Global breakpoints
+   ============================================== */
+
+/* Tablet (1024px and below) */
+
+
+[data-theme="light"] .step-card:hover,
+[data-theme="light"] .feature-card:hover,
+[data-theme="light"] .testi-card:hover {
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.12), 0 1px 4px rgba(0,0,0,0.06);
+    border-color: var(--cyan);
+}
+
+/* Gradient text */
+.gradient-text,
+.gradientText {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Stats */
+[data-theme="light"] .stat-item h2 {
+    color: #059669;
+}
+
+[data-theme="light"] .stat-item.active {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Progress bar */
+[data-theme="light"] .progress-bar {
+    background: linear-gradient(90deg, #059669, #10B981);
+}
+
+/* Sidebar */
+[data-theme="light"] .sidebar {
+    background: #FFFFFF;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+[data-theme="light"] .sidebar-links a {
+    color: #050505;
+}
+
+
+
+
+

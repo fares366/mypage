@@ -1,0 +1,226 @@
+/* Who It's For Section Component Styles */
+
+.whoItFor {
+    padding: 100px 130px;
+    background: var(--bg-dark);
+    text-align: left;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.badgeGold {
+    color: #FBBF24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.sectionTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    color: var(--text-primary);
+}
+
+
+
+.dualCards {
+    display: flex;
+    gap: 28px;
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.featureCard {
+    flex: 1 1 320px;
+    min-width: 280px;
+    max-width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--shadow-dark);
+}
+
+.topAccent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 2px;
+    background: var(--cyan);
+    border-radius: 0 0 10px 0;
+}
+
+.topAccent.gold {
+    background: #FBBF24;
+}
+
+.miniBadge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 22px;
+    letter-spacing: 0.03em;
+}
+
+.miniBadgeCyan {
+    background: var(--cyan-dim);
+    color: var(--cyan);
+    border: 1px solid rgba(0, 217, 192, 0.2);
+}
+
+.miniBadgeGold {
+    background: rgba(251, 191, 36, 0.1);
+    color: #FBBF24;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.featureCard h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+.featureCard p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-family: 'Inter', sans-serif;
+}
+.lead {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.75;
+    margin-bottom: 38px;
+    font-family: 'Inter', sans-serif;
+}
+.featureList {
+    list-style: none;
+}
+
+.featureList li {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.studentSide .featureList li {
+    color: var(--text-secondary);
+}
+
+.studentSide .featureList li::before {
+    color: var(--cyan);
+}
+
+.companySide .featureList li::before {
+    color: #FBBF24;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dualCards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featureCard {
+        padding: 30px 20px;
+        max-width: 620px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 920px) {
+    .whoItFor {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dualCards {
+        flex-direction: column;
+    }
+
+    .featureCard {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 658px) {
+    .whoItFor {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .dualCards {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .featureCard {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+    .featureCard h3 {
+        font-size: 24px;
+    }
+
+    .featureCard p,
+    .lead,
+    .featureList li {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .whoItFor {
+        padding: 20px 16px;
+    }
+
+    .featureCard {
+        padding: 24px 16px;
+    }
+
+    .featureCard h3 {
+        font-size: 22px;
+    }
+
+    .featureCard p,
+    .featureList li {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,59 @@
+/* Statistics Row Component Styles */
+
+.statsRow {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 80px;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.statItem h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--cyan);
+}
+
+.statItem.active {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--blue-dim);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .statsRow {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .statItem {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 920px) {
+    .statsRow {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 658px) {
+    .statsRow {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .statItem h2 {
+        font-size: 24px;
+    }
+}
